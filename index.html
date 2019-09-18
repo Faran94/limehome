@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-US">
+   <head>
+      <title>LimeHome Properties Near Me</title>
+      <meta charset="UTF-8" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   </head>
+   <body>
+      <div class="content">
+         <h1>LIMEHOME PROPERTY BOOKING</h1>
+         <div class="head_sec">
+            <div class="bar">
+               <div class="">
+                  <button onclick="location.href='#map'" type="button">VIEW MAP</button>
+                  <button onclick="location.href='#near_locations'" type="button">LOCATIONS & FORM</button>
+               </div>
+               <div class="">
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-4 instr">
+                  <img src="img/map.png"></img>
+                  <p>Click on map marker to view details.</p>
+                  <img src="img/home.png"></img>
+                  <p>Scroll down to view available properties.</p>
+                  <img src="img/form.png"></img>
+                  <p>Click 'Book' button and enter details.</p>
+                  <img src="img/email.png"></img>
+                  <p>You will recieve the confirmation email.</p>
+               </div>
+               <div class="col-8" id="map">
+                  <div id="locations-near-you-map"></div>
+               </div>
+            </div>
+            <div class="form-popup" id="myForm">
+               <form action="/action_page.php" class="form-container">
+                  <h3>Booking Form</h3>
+                  <label for="txt"><b>Name</b></label>
+                  <input type="text" placeholder="Enter Name" name="txt" required>
+                  <label for="email"><b>Email</b></label>
+                  <input type="email" placeholder="Enter Email" name="email" required>
+                  <label for="tel"><b>Phone</b></label>
+                  <input type="tel" placeholder="Enter Phone" name="tel" required>
+                  <label for="date"><b>Check-in</b></label>
+                  <input type="date" placeholder="Enter Phone" name="date" required>
+                  <label for="date"><b>Check-out</b></label>
+                  <input type="date" placeholder="Enter Phone" name="date" required>
+                  <button type="submit">Submit</button>
+                  <button type="button" class="cancel" onclick="closeForm()">Close</button>
+               </form>
+            </div>
+            <div class="centered" id="near_locations"></div>
+            <script defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyDwy7mwct5ALfK9FaxjZuIVEUx8Ggi6_nI&callback=createSearchableMap"></script>
+            <script src="map.js"></script>
+            <script src="locations.js"></script>
+            <script src="functions.js"></script>
+         </div>
+      </div>
+   </body>
+</html>
